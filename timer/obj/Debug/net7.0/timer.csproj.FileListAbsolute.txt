@@ -1,0 +1,15 @@
+/Users/jthach000/Desktop/Programming/timer/timer/bin/Debug/net7.0/timer
+/Users/jthach000/Desktop/Programming/timer/timer/bin/Debug/net7.0/timer.deps.json
+/Users/jthach000/Desktop/Programming/timer/timer/bin/Debug/net7.0/timer.runtimeconfig.json
+/Users/jthach000/Desktop/Programming/timer/timer/bin/Debug/net7.0/timer.dll
+/Users/jthach000/Desktop/Programming/timer/timer/bin/Debug/net7.0/timer.pdb
+/Users/jthach000/Desktop/Programming/timer/timer/obj/Debug/net7.0/timer.csproj.AssemblyReference.cache
+/Users/jthach000/Desktop/Programming/timer/timer/obj/Debug/net7.0/timer.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jthach000/Desktop/Programming/timer/timer/obj/Debug/net7.0/timer.AssemblyInfoInputs.cache
+/Users/jthach000/Desktop/Programming/timer/timer/obj/Debug/net7.0/timer.AssemblyInfo.cs
+/Users/jthach000/Desktop/Programming/timer/timer/obj/Debug/net7.0/timer.csproj.CoreCompileInputs.cache
+/Users/jthach000/Desktop/Programming/timer/timer/obj/Debug/net7.0/timer.dll
+/Users/jthach000/Desktop/Programming/timer/timer/obj/Debug/net7.0/refint/timer.dll
+/Users/jthach000/Desktop/Programming/timer/timer/obj/Debug/net7.0/timer.pdb
+/Users/jthach000/Desktop/Programming/timer/timer/obj/Debug/net7.0/timer.genruntimeconfig.cache
+/Users/jthach000/Desktop/Programming/timer/timer/obj/Debug/net7.0/ref/timer.dll
