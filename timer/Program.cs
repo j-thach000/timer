@@ -1,7 +1,8 @@
 ﻿/* TODO:
  * prompt user to choose stopwatch or timer function
- * [] print a menu
- * [] allow user to input a menu choice
+ * [x] print a menu
+ * [x] allow user to input a menu choice
+ * [] implement menu choices
  * 
  * choosing the stopwatch function begins updating a printed line with time
  * choosing the timer functions shows a line of printed time decreasing
