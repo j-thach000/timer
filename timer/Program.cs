@@ -13,6 +13,7 @@ void MenuPrint()
 {
     Console.WriteLine("1 - Stopwatch");
     Console.WriteLine("2 - Timer");
+    Console.WriteLine("3 - Conversion: Minutes to Hours");
     Console.WriteLine("0 - Exit");
 }
 
@@ -23,9 +24,32 @@ int MenuReadNumber()
     return menuNumber;
 }
 
+decimal GenericReadNumber()
+{
+    decimal genericNumberInput = Convert.ToDecimal(Console.ReadLine());
+    return genericNumberInput;
+}
+
 int menuChoice;
 do
 {
     MenuPrint();
     menuChoice = MenuReadNumber();
+    switch (menuChoice)
+    {
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            Console.Write("Time studied: ");
+            decimal minutesStudied = GenericReadNumber();
+            decimal minutesConvertedToHours = minutesStudied / 60;
+            Console.WriteLine($"% of hour studied: {minutesConvertedToHours}");
+            break;
+        case 0:
+            break;
+        default:
+            break;
+    }
 } while (menuChoice != 0);
