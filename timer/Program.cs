@@ -9,12 +9,20 @@
  * pressing enter key stops current function
  */
 
+// refactor with switch expression?
 void MenuPrint()
 {
     Console.WriteLine("1 - Stopwatch");
     Console.WriteLine("2 - Timer");
     Console.WriteLine("3 - Conversion: Minutes to Hours");
+    Console.WriteLine("4 - Modified Pomodoro");
     Console.WriteLine("0 - Exit");
+}
+
+void PomodorMenuPrint()
+{
+    Console.WriteLine("1 - Duration completed");
+    Console.WriteLine("2 - Exit");
 }
 
 int MenuReadNumber()
@@ -24,9 +32,9 @@ int MenuReadNumber()
     return menuNumber;
 }
 
-decimal GenericReadNumber()
+double GenericReadNumber()
 {
-    decimal genericNumberInput = Convert.ToDecimal(Console.ReadLine());
+    double genericNumberInput = Convert.ToDouble(Console.ReadLine());
     return genericNumberInput;
 }
 
@@ -43,9 +51,59 @@ do
             break;
         case 3:
             Console.Write("Time studied: ");
-            decimal minutesStudied = GenericReadNumber();
-            decimal minutesConvertedToHours = minutesStudied / 60;
+            double minutesStudied = GenericReadNumber();
+            double minutesConvertedToHours = minutesStudied / 60;
             Console.WriteLine($"% of hour studied: {minutesConvertedToHours}");
+            break;
+        // write documentation on this feature
+        case 4:
+            int pomodoroMenuChoice;
+            double currentStudyDuration = 5;
+            double incrementStreak = 0;
+            double totalStudyDuration = 0;
+            do
+            {
+                DateTime localDate = DateTime.Now;
+                Console.WriteLine("=====");
+                Console.WriteLine(localDate.ToString());
+                Console.WriteLine($"Current increment: {currentStudyDuration}");
+                Console.WriteLine($"Increment streak : {incrementStreak}");
+                Console.WriteLine($"Total time       : {totalStudyDuration}");
+                Console.WriteLine("=====");
+
+                PomodorMenuPrint();
+                pomodoroMenuChoice = MenuReadNumber();
+                switch (pomodoroMenuChoice)
+                {
+                    case 1:
+                        Console.Write($"Distracted? (y/n): ");
+                        string stateDistracted = Console.ReadLine();
+                        if (stateDistracted == "y")
+                        {
+                            totalStudyDuration += currentStudyDuration;
+                            if (currentStudyDuration > 5)
+                            {
+                                currentStudyDuration -= 5;
+                            }
+                        }
+                        else if (stateDistracted == "n")
+                        {
+                            totalStudyDuration += currentStudyDuration;
+                            incrementStreak += 1;
+                            if (incrementStreak == 3)
+                            {
+                                currentStudyDuration += 5;
+                                incrementStreak = 0;
+                            }
+                        } 
+                        break;
+                    case 2:
+                        break;
+                    default:
+                        break;
+                }
+            }
+            while (pomodoroMenuChoice != 2);
             break;
         case 0:
             break;
