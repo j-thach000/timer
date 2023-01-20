@@ -53,7 +53,10 @@ do
             Console.Write("Time studied: ");
             double minutesStudied = GenericReadNumber();
             double minutesConvertedToHours = minutesStudied / 60;
+            Console.WriteLine("=====");
             Console.WriteLine($"% of hour studied: {minutesConvertedToHours}");
+            Console.WriteLine("=====");
+
             break;
         // write documentation on this feature
         case 4:
