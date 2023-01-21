@@ -53,9 +53,9 @@ do
             Console.Write("Time studied: ");
             double minutesStudied = GenericReadNumber();
             double minutesConvertedToHours = minutesStudied / 60;
-            Console.WriteLine("======================================");
+            Console.WriteLine("==========================");
             Console.WriteLine($"% of hour studied: {minutesConvertedToHours}");
-            Console.WriteLine("======================================");
+            Console.WriteLine("==========================");
 
             break;
         // write documentation on this feature
@@ -67,12 +67,12 @@ do
             do
             {
                 DateTime localDate = DateTime.Now;
-                Console.WriteLine("======================================");
+                Console.WriteLine("==========================");
                 Console.WriteLine(localDate.ToString());
                 Console.WriteLine($"Current increment: {currentStudyDuration}");
                 Console.WriteLine($"Increment streak : {incrementStreak}");
                 Console.WriteLine($"Total time       : {totalStudyDuration}");
-                Console.WriteLine("======================================");
+                Console.WriteLine("==========================");
 
                 PomodorMenuPrint();
                 pomodoroMenuChoice = MenuReadNumber();
