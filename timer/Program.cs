@@ -19,7 +19,7 @@ void MenuPrint()
     Console.WriteLine("0 - Exit");
 }
 
-void PomodorMenuPrint()
+void PomodoroMenuPrint()
 {
     Console.WriteLine("1 - Duration completed");
     Console.WriteLine("2 - Exit");
@@ -62,6 +62,7 @@ do
 
         // [] write documentation on this feature
         // [] implement prompting user to display study subject and print it each loop
+        // [x] change color of study statistics
         case 4:
             int pomodoroMenuChoice;
             double currentStudyDuration = 5;
@@ -72,13 +73,15 @@ do
                 Console.Beep();
                 DateTime localDate = DateTime.Now;
                 Console.WriteLine("==========================");
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine(localDate.ToString());
                 Console.WriteLine($"Current increment: {currentStudyDuration}");
                 Console.WriteLine($"Increment streak : {incrementStreak}");
                 Console.WriteLine($"Total time       : {totalStudyDuration}");
+                Console.ResetColor();
                 Console.WriteLine("==========================");
 
-                PomodorMenuPrint();
+                PomodoroMenuPrint();
                 pomodoroMenuChoice = MenuReadNumber();
                 switch (pomodoroMenuChoice)
                 {
