@@ -58,10 +58,10 @@ do
             Console.WriteLine("==========================");
             Console.WriteLine($"% of hour studied: {minutesConvertedToHours}");
             Console.WriteLine("==========================");
-
             break;
-        // write documentation on this feature
-        // implement prompting user to display study subject and print it each loop
+
+        // [] write documentation on this feature
+        // [] implement prompting user to display study subject and print it each loop
         case 4:
             int pomodoroMenuChoice;
             double currentStudyDuration = 5;
@@ -69,6 +69,7 @@ do
             double totalStudyDuration = 0;
             do
             {
+                Console.Beep();
                 DateTime localDate = DateTime.Now;
                 Console.WriteLine("==========================");
                 Console.WriteLine(localDate.ToString());
