@@ -38,6 +38,8 @@ double GenericReadNumber()
     return genericNumberInput;
 }
 
+Console.Title = "[Study Tool]";
+
 int menuChoice;
 do
 {
@@ -59,6 +61,7 @@ do
 
             break;
         // write documentation on this feature
+        // implement prompting user to display study subject and print it each loop
         case 4:
             int pomodoroMenuChoice;
             double currentStudyDuration = 5;
