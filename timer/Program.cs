@@ -60,9 +60,19 @@ do
             Console.WriteLine("==========================");
             break;
 
-        // [] write documentation on this feature
-        // [] implement prompting user to display study subject and print it each loop
-        // [x] change color of study statistics
+        /* TODO
+         * [] write documentation
+         * [] input validation for distraction y/n prompt
+         * [] implement prompting user to display study subject and print it each loop
+         * [] output records to a text file
+         * [] set background to default to black (daytime terminal background makes cyan hard to read)
+         * [] set text color to default to white
+         * [x] change color of study statistics
+         * [x] formatting ==== border to separate study statistics
+         * [x] printing date and time each increment
+         * [x] adding sound fx to provide feedback for each study increment
+         */
+
         case 4:
             int pomodoroMenuChoice;
             double currentStudyDuration = 5;
