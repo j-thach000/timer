@@ -38,8 +38,7 @@ double GenericReadNumber()
     return genericNumberInput;
 }
 
-Console.Title = "[Study Tool]";
-
+Console.Title = "Study Tool";
 int menuChoice;
 do
 {
@@ -78,6 +77,10 @@ do
             double currentStudyDuration = 5;
             double incrementStreak = 0;
             double totalStudyDuration = 0;
+
+            Console.Write("Subject: ");
+            string studySubject = Console.ReadLine();
+
             do
             {
                 Console.Beep();
@@ -85,6 +88,7 @@ do
                 Console.WriteLine("==========================");
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine(localDate.ToString());
+                Console.WriteLine($"Subject          : {studySubject}");
                 Console.WriteLine($"Current increment: {currentStudyDuration}");
                 Console.WriteLine($"Increment streak : {incrementStreak}");
                 Console.WriteLine($"Total time       : {totalStudyDuration}");
