@@ -66,8 +66,6 @@ do
          * [] input validation for distraction y/n prompt
          * [x] implement prompting user to display study subject and print it each loop
          * [] output records to a text file
-         * [] set background to default to black (daytime terminal background makes cyan hard to read)
-         * [] set text color to default to white
          * [x] change color of study statistics
          * [x] formatting ==== border to separate study statistics
          * [x] printing date and time each increment
@@ -104,6 +102,16 @@ do
                     case 1:
                         Console.Write($"Distracted? (y/n): ");
                         string stateDistracted = Console.ReadLine();
+                        do
+                        {
+                            Console.Write("Invalid input, try again: ");
+                            stateDistracted = Console.ReadLine();
+                        } while(stateDistracted != "y" && stateDistracted != "n");
+                        // think of discrete math logic
+                        // can't use || as the connective for the condition since
+                        // the variable can only be one value at a time
+                        // so it just turns into an endless loop
+
                         if (stateDistracted == "y")
                         {
                             totalStudyDuration += currentStudyDuration;
