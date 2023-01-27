@@ -10,6 +10,8 @@
  */
 
 // refactor with switch expression?
+// doesn't make sense since the switch expression evaluates some logic and performs an action afterwards
+// this code is just printing a menu and we want methods to do just one thing
 void MenuPrint()
 {
     Console.WriteLine("1 - Stopwatch");
@@ -62,7 +64,7 @@ do
         /* TODO
          * [] write documentation
          * [] input validation for distraction y/n prompt
-         * [] implement prompting user to display study subject and print it each loop
+         * [x] implement prompting user to display study subject and print it each loop
          * [] output records to a text file
          * [] set background to default to black (daytime terminal background makes cyan hard to read)
          * [] set text color to default to white
@@ -83,6 +85,8 @@ do
 
             do
             {
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.Beep();
                 DateTime localDate = DateTime.Now;
                 Console.WriteLine("==========================");
