@@ -102,11 +102,11 @@ do
                     case 1:
                         Console.Write($"Distracted? (y/n): ");
                         string stateDistracted = Console.ReadLine();
-                        do
+                        while (stateDistracted != "y" && stateDistracted != "n")
                         {
                             Console.Write("Invalid input, try again: ");
                             stateDistracted = Console.ReadLine();
-                        } while(stateDistracted != "y" && stateDistracted != "n");
+                        } 
                         // think of discrete math logic
                         // can't use || as the connective for the condition since
                         // the variable can only be one value at a time
