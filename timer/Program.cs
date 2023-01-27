@@ -85,8 +85,6 @@ do
 
             do
             {
-                Console.BackgroundColor = ConsoleColor.Black;
-                Console.ForegroundColor = ConsoleColor.White;
                 Console.Beep();
                 DateTime localDate = DateTime.Now;
                 Console.WriteLine("==========================");
