@@ -11,7 +11,7 @@
 
 // refactor with switch expression?
 // doesn't make sense since the switch expression evaluates some logic and performs an action afterwards
-// this code is just printing a menu and we want methods to do just one thing
+// this code is just printing a menu and we want to logically separate methods for one purpose
 void MenuPrint()
 {
     Console.WriteLine("1 - Stopwatch");
@@ -24,7 +24,8 @@ void MenuPrint()
 void PomodoroMenuPrint()
 {
     Console.WriteLine("1 - Duration completed");
-    Console.WriteLine("2 - Exit");
+    Console.WriteLine("2 - Display session log");
+    Console.WriteLine("0 - Exit");
 }
 
 int MenuReadNumber()
@@ -63,13 +64,16 @@ do
 
         /* TODO
          * [] write documentation
-         * [] input validation for distraction y/n prompt
+         * [] high score for streaks of not being distracted
+         * [x] input validation for distraction y/n prompt
+         * [] implement some system for when to take breaks
          * [x] implement prompting user to display study subject and print it each loop
          * [] output records to a text file
          * [x] change color of study statistics
          * [x] formatting ==== border to separate study statistics
          * [x] printing date and time each increment
          * [x] adding sound fx to provide feedback for each study increment
+         * [] an array that slowly fills up with the times of each session
          */
 
         case 4:
@@ -77,6 +81,7 @@ do
             double currentStudyDuration = 5;
             double incrementStreak = 0;
             double totalStudyDuration = 0;
+            string[] studySessionLog = new string[100];
 
             Console.Write("Subject: ");
             string studySubject = Console.ReadLine();
@@ -109,8 +114,10 @@ do
                         } 
                         // think of discrete math logic
                         // can't use || as the connective for the condition since
-                        // the variable can only be one value at a time
+                        // the variable can only be one value at a time and it makes
+                        // either statement connected true                  
                         // so it just turns into an endless loop
+                        // remember do while loops go off at least once
 
                         if (stateDistracted == "y")
                         {
@@ -118,6 +125,7 @@ do
                             if (currentStudyDuration > 5)
                             {
                                 currentStudyDuration -= 5;
+                                incrementStreak = 0;
                             }
                         }
                         else if (stateDistracted == "n")
@@ -133,11 +141,13 @@ do
                         break;
                     case 2:
                         break;
+                    case 0: 
+                        break;
                     default:
                         break;
                 }
             }
-            while (pomodoroMenuChoice != 2);
+            while (pomodoroMenuChoice != 0);
             break;
         case 0:
             break;
