@@ -28,6 +28,16 @@ void PomodoroMenuPrint()
     Console.WriteLine("0 - Exit");
 }
 
+// [] refactor, look at Taking a Number challenge
+/* placeholder refactor
+ * int MenuReadNumber(string text)
+{
+    Console.Write(Text);
+    int menuNumber = Convert.ToInt32(Console.ReadLine());
+    return menuNumber;
+}
+ * 
+ */
 int MenuReadNumber()
 {
     Console.Write("Please input a choice: ");
@@ -35,6 +45,15 @@ int MenuReadNumber()
     return menuNumber;
 }
 
+// [] refactor, look at Taking a Number challenge
+/*
+ * double GenericReadNumber()
+{
+    Console.Write("Input a number: );
+    double genericNumberInput = Convert.ToDouble(Console.ReadLine());
+    return genericNumberInput;
+}
+ */
 double GenericReadNumber()
 {
     double genericNumberInput = Convert.ToDouble(Console.ReadLine());
@@ -74,6 +93,9 @@ do
          * [x] printing date and time each increment
          * [x] adding sound fx to provide feedback for each study increment
          * [] an array that slowly fills up with the times of each session
+         *      // feature above is harder than expected to implement
+         *      // the localDate.ToString() method doesn't fill the array
+         *      // instead i end up with storing and printing nothing
          */
 
         case 4:
