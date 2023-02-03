@@ -96,6 +96,8 @@ do
          *      // feature above is harder than expected to implement
          *      // the localDate.ToString() method doesn't fill the array
          *      // instead i end up with storing and printing nothing
+         * [] implement a feature that tracks times distracted with a counter     
+         *      
          */
 
         case 4:
@@ -103,6 +105,7 @@ do
             double currentStudyDuration = 5;
             double incrementStreak = 0;
             double totalStudyDuration = 0;
+            int timesDistracted = 0;
             string[] studySessionLog = new string[100];
 
             Console.Write("Subject: ");
@@ -119,6 +122,7 @@ do
                 Console.WriteLine($"Current increment: {currentStudyDuration}");
                 Console.WriteLine($"Increment streak : {incrementStreak}");
                 Console.WriteLine($"Total time       : {totalStudyDuration}");
+                Console.WriteLine($"Times Distracted : {timesDistracted}");
                 Console.ResetColor();
                 Console.WriteLine("==========================");
 
@@ -143,6 +147,7 @@ do
 
                         if (stateDistracted == "y")
                         {
+                            timesDistracted++;
                             totalStudyDuration += currentStudyDuration;
                             if (currentStudyDuration > 5)
                             {
