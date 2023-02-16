@@ -85,7 +85,7 @@ do
          * [] write documentation
          * [] high score for streaks of not being distracted
          * [x] input validation for distraction y/n prompt
-         * [] implement some system for when to take breaks
+         * [] implement some system for how long to take a break
          * [x] implement prompting user to display study subject and print it each loop
          * [] output records to a text file
          * [x] change color of study statistics
@@ -96,7 +96,7 @@ do
          *      // feature above is harder than expected to implement
          *      // the localDate.ToString() method doesn't fill the array
          *      // instead i end up with storing and printing nothing
-         * [] implement a feature that tracks times distracted with a counter     
+         * [x] implement a feature that tracks times distracted with a counter     
          *      
          */
 
@@ -105,7 +105,9 @@ do
             double currentStudyDuration = 5;
             double incrementStreak = 0;
             double totalStudyDuration = 0;
-            int timesDistracted = 0;
+            int timesDistractedStreak = 0;
+            int timesDistractedTotal = 0;
+            int breakDuration = 5;
             string[] studySessionLog = new string[100];
 
             Console.Write("Subject: ");
@@ -122,7 +124,9 @@ do
                 Console.WriteLine($"Current increment: {currentStudyDuration}");
                 Console.WriteLine($"Increment streak : {incrementStreak}");
                 Console.WriteLine($"Total time       : {totalStudyDuration}");
-                Console.WriteLine($"Times Distracted : {timesDistracted}");
+                Console.WriteLine($"Times Distracted streak : {timesDistractedStreak}");
+                Console.WriteLine($"Times Distracted total : {timesDistractedTotal}");
+                Console.WriteLine($"Break duration : {breakDuration}");
                 Console.ResetColor();
                 Console.WriteLine("==========================");
 
@@ -147,17 +151,20 @@ do
 
                         if (stateDistracted == "y")
                         {
-                            timesDistracted++;
+                            timesDistractedStreak++;
                             totalStudyDuration += currentStudyDuration;
                             if (currentStudyDuration > 5)
                             {
                                 currentStudyDuration -= 5;
                                 incrementStreak = 0;
                             }
+                            if (timesDistractedStreak == 2)
+                                Console.WriteLine("Take a break.");
                         }
                         else if (stateDistracted == "n")
                         {
                             totalStudyDuration += currentStudyDuration;
+                            breakDuration += 5;
                             incrementStreak += 1;
                             if (incrementStreak == 3)
                             {
@@ -182,3 +189,6 @@ do
             break;
     }
 } while (menuChoice != 0);
+
+// ENUMERATIONS
+enum StudySubject { Calculus, Discrete };
