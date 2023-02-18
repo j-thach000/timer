@@ -159,12 +159,17 @@ do
                                 incrementStreak = 0;
                             }
                             if (timesDistractedStreak == 2)
+                            {
                                 Console.WriteLine("Take a break.");
+                                breakDuration = 0;
+                                timesDistractedStreak = 0;
+                            }
+                                
                         }
                         else if (stateDistracted == "n")
                         {
                             totalStudyDuration += currentStudyDuration;
-                            breakDuration += 5;
+                            breakDuration += 2;
                             incrementStreak += 1;
                             if (incrementStreak == 3)
                             {
