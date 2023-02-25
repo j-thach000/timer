@@ -108,7 +108,6 @@ do
             int timesDistractedStreak = 0;
             int timesDistractedTotal = 0;
             int breakDuration = 5;
-            string[] studySessionLog = new string[100];
 
             Console.Write("Subject: ");
             string studySubject = Console.ReadLine();
@@ -194,6 +193,28 @@ do
             break;
     }
 } while (menuChoice != 0);
+
+// methods
+/*
+void PrintStats()
+{
+    DateTime localDate = DateTime.Now;
+    Console.WriteLine("==========================");
+    Console.ForegroundColor = ConsoleColor.Cyan;
+    Console.WriteLine(localDate.ToString());
+    Console.WriteLine($"Subject          : {studySubject}");
+    Console.WriteLine($"Current increment: {currentStudyDuration}");
+    Console.WriteLine($"Increment streak : {incrementStreak}");
+    Console.WriteLine($"Total time       : {totalStudyDuration}");
+    Console.WriteLine($"Times Distracted streak : {timesDistractedStreak}");
+    Console.WriteLine($"Times Distracted total : {timesDistractedTotal}");
+    Console.WriteLine($"Break duration : {breakDuration}");
+    Console.ResetColor();
+    Console.WriteLine("==========================");
+}
+*/
+
+// CLASSES
 
 // ENUMERATIONS
 enum StudySubject { Calculus, Discrete };
